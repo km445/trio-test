@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block headtitle %}{% endblock %}
+{% block title %}{% endblock %}
+{% block input %}
+
+<script type="text/javascript">
+document.body.onload = function() {
+    document.getElementById("mainForm").submit();
+}
+</script>
+
+<form id="mainForm" name="Pay" method="{{form_method}}" action="{{url}}" accept-charset="UTF-8">
+
+{% for key, value in parameters.items() %}
+<input type="hidden" name="{{key}}" value="{{value}}" />
+{% endfor %}
+</form>
+
+
+{% endblock %}

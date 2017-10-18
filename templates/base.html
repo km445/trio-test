@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></meta>
+		<meta http-equiv="content-type" content="text/html"></meta>
+		<meta name="keywords" content="{%block keywords%}{%endblock%}"></meta>
+		<meta name="description" content="{%block description%}{%endblock%}"></meta>
+		<meta name="abstract" content="{%block abstract%}{%endblock%}"></meta>
+		<meta name="robots" content="index, follow"></meta>
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" ></link>
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"></link>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
+		<title>
+		  {%block headtitle%}
+			trio-test
+		  {%endblock%}
+		  | trio-test
+		</title>
+		{%block headscript%}
+		{%endblock%}
+		{%block headstyle%}
+		{%endblock%}	
+		
+		<style>
+		</style>
+		<script type="text/javascript">
+		</script>
+	</head>  
+	<body>
+		<!--Main content-->
+		<div class="container" style="margin-top:25px;">
+			<div class="row">
+				{% block input %}
+				{% endblock %}
+			</div>
+			<div class="row">
+				{% block request_log %}
+				{% endblock %}
+			</div>
+		</div>	
+	</body>  
+</html>

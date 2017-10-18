@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block headtitle %}Оплата{% endblock %}
+{% block title %}{% endblock %}
+{% block input %}
+<div class="col-sm-12">
+	<form action="/" method="POST">
+		{% if error %}
+		<div class="alert alert-danger">
+		  <strong>{{error}}</strong>
+		</div>
+		{% endif %}
+		<div class="form-group">
+			<label for="amount">Сумма оплаты:</label>
+			<input type="text" class="form-control" name="amount" id="amount" value="">
+		</div>
+		<div class="form-group">
+			<label for="currency">Валюта оплаты</label>
+			<select class="form-control" name="currency" id="currency">
+				<option name="USD">USD</option>
+				<option name="EUR">EUR</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="description">Описание товара:</label>
+			<textarea class="form-control" rows="5" name="description" id="description" style="resize:vertical;"></textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">Оплатить</button>
+	</form>
+</div>
+{% endblock %}
+{% block request_log %}
+<h2>Лог запросов</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Номер счета</th>
+			<th>Сумма оплаты</th>
+			<th>Валюта оплаты</th>
+			<th>Описание товара</th>
+			<th>Время отправки</th>			
+		</tr>
+	</thead>
+	<tbody>
+	{% if log|length >0 %}
+	{% for row in log %}
+		<tr>
+			<th>{{ row[0] }}</th>
+			<th>{{ row[1] }}</th>
+			<th>{{ row[2] }}</th>
+			<th>{{ row[3] }}</th>	
+			<th>{{ row[4] }}</th>				
+		</tr>
+	{% endfor %}
+	{% endif %}
+	</tbody>
+</table>
+{% endblock %}
