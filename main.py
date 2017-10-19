@@ -3,7 +3,7 @@ from collections import OrderedDict
 from flask import Flask, redirect, render_template, request
 app = Flask(__name__)
 
-int(os.environ.get('PORT',5000))
+port=int(os.environ.get('PORT',5000))
 
 def generateHash(parameters):
 	'''
