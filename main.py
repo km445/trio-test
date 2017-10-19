@@ -3,6 +3,8 @@ from collections import OrderedDict
 from flask import Flask, redirect, render_template, request
 app = Flask(__name__)
 
+int(os.environ.get('PORT',5000))
+
 def generateHash(parameters):
 	'''
 	Generates sign hash using mandatory request parameters and password.
@@ -76,4 +78,4 @@ def index():
 		return render_template("main.html", log=log)
 
 if __name__=="__main__":
-	app.run(host="0.0.0.0", port="80", debug = False)
+	app.run(host="0.0.0.0", port=port, debug = False)
