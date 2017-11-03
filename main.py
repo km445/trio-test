@@ -1,4 +1,4 @@
-import jinja2, os, urllib.request, urllib.parse, json, hashlib, config, datetime
+import os, urllib.request, urllib.parse, json, hashlib, config, datetime
 from collections import OrderedDict
 from flask import Flask, redirect, render_template, request
 app = Flask(__name__)
